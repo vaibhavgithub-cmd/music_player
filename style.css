@@ -1,0 +1,621 @@
+/* This page is responsible for styling of the complete music player except the contact us page. */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #c8e8e9;
+}
+
+
+.login {
+  display: inline-flex;
+}
+
+nav {
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+  text-decoration: none;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  height: 65px;
+  background-color: black;
+  color: white;
+}
+
+nav ul li {
+  padding: 0 18px;
+}
+
+.brand img {
+  width: 44px;
+  padding: 0 8px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  font-weight: bolder;
+  font-size: 1.3rem;
+}
+
+.container1 {
+  min-height: 72vh;
+  background-color: white;
+  color: rgb(199, 193, 193);
+  font-family: 'Varela Round', sans-serif;
+  display: flex;
+  margin: 23px auto;
+  width: 70%;
+  border-radius: 12px;
+  padding: 34px;
+  background: #031b1b;
+
+}
+
+.bottom {
+  position: sticky;
+  bottom: 0;
+  height: 130px;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.icons {
+  margin-top: 14px;
+}
+
+.icons i {
+  cursor: pointer;
+}
+
+#myProgressBar {
+  width: 80vw;
+  cursor: pointer;
+}
+
+.songItemContainer {
+  margin-top: 74px;
+}
+
+.songItem {
+  height: 50px;
+  display: flex;
+  background-color:rgb(241, 240, 249);
+  text-align: center;
+  color: black;
+  margin: 12px 0;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 34px;
+}
+
+.songItem img {
+  width: 43px;
+  margin: 0 23px;
+  border-radius: 100px;
+}
+
+.timestamp {
+  margin: 0 23px;
+}
+
+.timestamp i {
+  cursor: pointer;
+}
+
+.songInfo {
+  position: absolute;
+  left: 10vw;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.songInfo img {
+  opacity: 0;
+  transition: opacity 0.4s ease-in;
+}
+
+.navigation-style {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+@media only screen and (max-width: 1100px) {
+  body {
+    background-color: rgb(208, 76, 19);
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  align-self: center;
+  transition: 0.3s;
+  border-radius: 5px;
+  height: 300px;
+  width: 300px;
+  display: inline-flex;
+  border-color: black;
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 100px;
+}
+
+img {
+  border-radius: 10px 10px 0 0;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.9);
+}
+
+.text-center {
+  position: absolute;
+  bottom: 2px;
+}
+
+.image {
+  height: 300px;
+  width: 300px;
+}
+
+.progress-area {
+  height: 6px;
+  width: 50%;
+  border-radius: 50px;
+  background: #f0f0f081;
+  cursor: pointer;
+}
+
+.progress-area .progress-bar {
+
+  height: inherit;
+  width: 0%;
+  position: relative;
+  border-radius: inherit;
+  background: #ffffff;
+}
+
+.progress-bar::before {
+  content: "";
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  top: 50%;
+  right: -5px;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%);
+  background: inherit;
+  transition: opacity 0.2s ease;
+}
+
+.progress-area:hover .progress-bar::before {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.progress-area .song-timer {
+  margin-top: 2px;
+}
+
+.song-timer span {
+  font-size: 13px;
+  color: #ffffff;
+}
+
+.controls {
+  margin: 70px 0 5px 0;
+}
+
+.controls i {
+  font-size: 28px;
+  user-select: none;
+  background: #ffffff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.controls i:nth-child(2),
+.controls i:nth-child(4) {
+  font-size: 43px;
+}
+
+.controls #prev {
+  margin-right: -13px;
+}
+
+.controls #next {
+  margin-left: -13px;
+}
+
+.controls i.prev {
+  font-size: 38px;
+}
+
+.controls i.next {
+  font-size: 38px;
+}
+
+.controls .play-pause {
+  height: 54px;
+  width: 54px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow:
+    0 0 2px #fff,
+    8px 8px 15px #ff5e66,
+    -3px -3px 15px #f0ecec;
+
+}
+
+.play-pause::before {
+  position: absolute;
+  content: "";
+  height: 43px;
+  width: 43px;
+  border-radius: inherit;
+  background: transparent;
+  border: 3px solid #ffffff;
+}
+
+.play-pause i {
+  height: 43px;
+  width: 43px;
+  line-height: 43px;
+  text-align: center;
+  background: inherit;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: white;
+  position: absolute;
+
+}
+
+.prev,
+.next {
+  box-shadow:
+    0 0 2px #fff,
+    8px 8px 15px #ff5e66,
+    -3px -3px 15px #f0ecec;
+  border-radius: 50%;
+}
+
+.music-list {
+  position: absolute;
+  width: 100%;
+  bottom: -55%;
+  opacity: 0;
+  pointer-events: none;
+  left: 0;
+  box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
+  z-index: 5;
+  padding: 15px 30px;
+  border-radius: 15px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.973), transparent),
+    linear-gradient(to top left, rgb(255, 23, 23), transparent),
+    linear-gradient(to top right, rgb(0, 183, 255), transparent);
+  background-blend-mode: screen;
+  transition: all 0.15s ease-in-out;
+}
+
+.music-list.show {
+  bottom: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.music-list ul {
+  margin-top: 10px 0;
+  max-height: 260px;
+  overflow: auto;
+}
+
+.music-list ul li {
+  list-style: none;
+  display: flex;
+  cursor: pointer;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+  color: #000000;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.music-list ul li:last-child {
+  border-bottom: 0px;
+}
+
+.music-list ul li .row span {
+  font-size: 17px;
+}
+
+.music-list ul li .row p {
+  opacity: 0.6;
+}
+
+ul li .audio-duration {
+  font-size: 16px;
+}
+
+.header .row {
+  display: flex;
+  align-items: center;
+  font-size: 19px;
+  color: #515c6f;
+}
+
+.header .row i {
+  cursor: default;
+}
+
+.header .row span {
+  margin-left: 5px;
+}
+
+.header #close {
+  font-size: 22px;
+  color: #515c6f;
+}
+
+.music-list ul::-webkit-scrollbar {
+  width: 0;
+}
+
+.music-list ul li:hover {
+  color: #0e9fff;
+}
+
+ul li.playing {
+  pointer-events: none;
+  color: #0e9fff;
+}
+
+/* Full-width input fields */
+input[type=text],
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: black;
+  color: rgb(250, 244, 244);
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 500px;
+  height: 500px;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 150px 500px 150px 500px
+}
+
+.modal-content {
+  background-color: #2d2929;
+  margin: 5% auto 15% auto;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: rgb(103, 46, 46);
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {
+    -webkit-transform: scale(0)
+  }
+
+  to {
+    -webkit-transform: scale(1)
+  }
+}
+
+@keyframes animatezoom {
+  from {
+    transform: scale(0)
+  }
+
+  to {
+    transform: scale(1)
+  }
+}
+
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+
+  .cancelbtn {
+    width: 100%;
+  }
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.btn.dropdown-toggle {
+  width: 150px;
+  text-align: center;
+}
+
+span.caret {
+  position: absolute;
+  left: 90%;
+  top: 45%;
+}
+
+label {
+  padding-top: 5px;
+}
+
+.form-label {
+  padding-left: 0px !important;
+}
+
+.form-control {
+  border-radius: 100px;
+}
+
+.btn-success {
+  background-color: #3b7d4a im !important;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-success:hover {
+  background-color: #4daf64;
+}
+
+img.track {
+  border: 3px solid #8a8a8a;
+}
+
+
+main {
+  position: relative;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+main article {
+  width: calc(100% / 3 - 5px);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 25px;
+  background: #f1f3f4;
+}
+
+main article img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+main article p,
+main article h4,
+main article audio {
+  padding: 0 5px;
+}
+
+main article audio {
+  width: 100%;
+}
+
+.search {
+  color: black;
+  background-color: #f7f7f7;
+  position: relative;
+  margin-left: 155px;
+  justify-content: center;
+  flex-wrap: wrap;
+  justify-self: center;
+  width: 900px;
+  height: 200px;
+  border: #000 solid;
+  border-radius: 1cm;
+  align-items: center;
+  padding: 100px;
+}
+
+#searchTerm {
+  border: rgb(201, 193, 193) solid;
+  border-radius: 20cm;
+  width: 100%;
+}
+
+#searchTermBtn {
+  border: #000 solid;
+  border-radius: 20cm;
+  width: 100%;
+  margin-top: 10px;
+
+}

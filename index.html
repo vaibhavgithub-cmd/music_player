@@ -1,0 +1,129 @@
+<!-- This page is for basic functionality of Home page,Login page and Signup page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Music App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li class="brand"><img src="logo.png" alt="music"> Play Along</li>
+            <li><a class="navigation-style" href="/index.html">Home</a></li>
+            <li><a class="navigation-style" href="/Playlist.html">Playlist</a></li>
+            <li><a class="navigation-style" href="/contactus.html">Contact Us</a></li>
+            <!-- Login Part -->
+            <div class="login">
+            <li>
+                    <button class="button" onclick="document.getElementById('id01').style.display='block'"
+                        style="width:auto;">Login</button>
+                    <div id="id01" class="modal">
+
+                        <form class="modal-content animate" action="connect.php" method="post">
+                            <div class="imgcontainer">
+                                <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                                    title="Close Modal">&times;</span>
+                            </div>
+
+                            <div class="container" id="ulogin">
+                                <label for="uname" id="username"><b>Username</b></label>
+                                <input type="text" placeholder="Enter Username" name="username" required>
+                                <label for="psw" id="password" name="password"><b>Password</b></label>
+                                <input type="password" placeholder="Enter Password" name="password" required>
+
+                                <button type="submit" name="sub">Login</button>
+                                <label>
+                                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                                </label>
+                            </div>
+
+                            <div class="container" style="background-color:#f1f1f1">
+                                <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                                    class="cancelbtn" >Cancel</button>
+                                <span class="psw"><a href="#">Forget password?</a></span>
+                            </div>
+                        </form>
+                    </div>
+            </li>
+            <!-- SignUp Part -->
+            <li><button class="button" onclick="document.getElementById('id02').style.display='block'"
+                        style="width:auto;">SignUp</button>
+                    <div id="id02" class="modal">
+
+                        <form class="modal-content animate" action="#" method="post">
+                            <div class="imgcontainer">
+                                <span onclick="document.getElementById('id02').style.display='none'" class="close"
+                                    title="Close Modal">&times;</span>
+                            </div>
+
+                            <div class="container">
+                                <label for="uname"><b>Name</b></label>
+                                <input type="text" placeholder="Enter Username" name="uname" required>
+
+                                <label for="psw"><b>Password</b></label>
+                                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                                <label for="psw"><b>Confirm Password</b></label>
+                                <input type="password" placeholder="Confirm Password" name="psw" required>
+
+                                <button type="submit">Create Account</button>
+                                <label>
+                                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                                </label>
+                            </div>
+
+                            <div class="container" style="background-color:#f1f1f1">
+                                <button type="button" onclick="document.getElementById('id02').style.display='none'"
+                                    class="cancelbtn">Cancel</button>
+                                <span class="psw"><a href="ulogin">Go to login</a></span>
+                            </div>
+                        </form>
+                    </div>
+                    <script>
+                        var modal = document.getElementById('id02');
+                        window.onclick = function (event) {
+                            if (event.target == modal) {
+                                modal.style.display = "none";
+                            }
+                        }
+                    </script>
+            </li>
+        </div>
+        </ul>
+    </nav>
+    <!-- Search Part -->
+    <div class="search">
+        <h3>SEARCH FOR YOUR FAVOURITE ARTIST</h3>
+        <input type="text" id="searchTerm">
+        <button id="searchTermBtn">Search</button>
+    </div>
+    <!-- Song Cards -->
+<main id="songs"></main>
+    <div class="card">
+        <img src="songs/lofiback.jpg" alt="Avatar" class="image">
+        <div class="text-center">
+            <a class="navigation-style" href="Playlist.html">
+                <h1>Lofi songs</h1>
+            </a>
+        </div>
+        </div>
+    <div class="card">
+        <img src="songs/partybg.webp" alt="Avatar" class="image">
+        <div class="text-center">
+            <a class="navigation-style" href="/Playlist.html">
+                <h1>Party songs</h1>
+            </a>
+        </div>
+    </div>
+    <div class="card">
+        <img src="songs/albumbg.jpg" alt="Avatar" class="image">
+        <div class="text-center">
+            <a class="navigation-style" href="/Playlist.html">
+                <h1>Albums</h1>
+            </a>
+        </div>
+    </div> 
+    <script src="app.js"></script>
+</body>
+</html>
